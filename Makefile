@@ -6,6 +6,11 @@ dependencies:
 
 init: start dependencies
 
+start-ci:
+	docker compose up -d php-ci
+
+init-ci: start-ci dependencies
+
 init-db-test:
 	docker compose run --rm php bin/console doctrine:database:create --env=test
 	docker compose run --rm php bin/console doctrine:schema:create --env=test

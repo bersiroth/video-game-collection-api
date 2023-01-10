@@ -24,5 +24,12 @@ services:
     depends_on:
       - postgres
 
+  php-ci:
+    build:
+      dockerfile: ./docker/php/dockerfile
+      target: php
+    depends_on:
+      - postgres
+
 volumes:
   db-data:
