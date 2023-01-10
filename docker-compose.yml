@@ -27,7 +27,7 @@ services:
   php-ci:
     build:
       dockerfile: ./docker/php/dockerfile
-      target: php
+      target: php-ci
     depends_on:
       - postgres
 

@@ -14,6 +14,11 @@ USER video-game
 
 WORKDIR /var/www/video-game
 
+FROM php as php-ci
+
+COPY --chown=video-game:video-game ../ .
+RUN composer install --working-dir=/var/www/video-game
+
 FROM php as php-dev
 
 CMD ["php", "-S", "0.0.0.0:80", "-t", "public"]

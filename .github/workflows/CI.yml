@@ -10,13 +10,14 @@ jobs:
       - uses: actions/checkout@v2
       - name: Init project
         run: |
-          make init-ci
+          docker compose up -d --build php-ci
       - name: Create test database
         run: |
-          make init-db-test
+          docker compose exec -T php-ci bin/console doctrine:database:create --if-not-exists --env=test |
+          docker compose exec -T php-ci bin/console doctrine:schema:update --env=test --force
       - name: linter
         run: |
-          make php-cs-fixer
+          docker compose exec -T --env PHP_CS_FIXER_IGNORE_ENV=1 php-ci vendor/bin/php-cs-fixer fix --dry-run
       - name: Run tests
         run: |
-            make test
+          docker compose exec -T php-ci vendor/bin/phpunit
