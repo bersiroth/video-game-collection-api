@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Init project
+        run: |
+          make init
+      - name: Create test database
+        run: |
+          make init-db-test
+      - name: linter
+        run: |
+          make php-cs-fixer
+      - name: Run tests
+        run: |
+            make test

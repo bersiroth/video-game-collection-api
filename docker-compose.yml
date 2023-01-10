@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:15.1-alpine
+    environment:
+      POSTGRES_DB: video-game-collection
+      POSTGRES_PASSWORD: video-game-collection-password
+      POSTGRES_USER: video-game-collection-user
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+
+  php:
+    build:
+      dockerfile: ./docker/php/dockerfile
+      target: php-dev
+    volumes:
+      - .:/var/www/video-game
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+
+volumes:
+  db-data:
