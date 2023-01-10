@@ -13,6 +13,7 @@ jobs:
           docker compose up -d php-ci
       - name: Create test database
         run: |
+          sleep 2 |
           docker compose exec -T php-ci bin/console doctrine:database:create --if-not-exists --env=test |
           docker compose exec -T php-ci bin/console doctrine:schema:update --env=test --force
       - name: linter
