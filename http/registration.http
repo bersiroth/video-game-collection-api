@@ -1,0 +1,51 @@
+### Valid registration user
+POST http://localhost:80/api/registration
+Content-Type: application/json
+
+{
+    "email": "{{$random.email}}",
+    "username": "{{$random.alphanumeric(50)}}",
+    "password": "{{$random.alphanumeric(50)}}"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 201, "Response status is not 201");
+    });
+%}
+
+### Registration user with empty body
+POST http://localhost:80/api/registration
+Content-Type: application/json
+
+{
+
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+        client.assert(response.body.message === "User not valid", "Message is not valid");
+        client.assert(response.body.errors.email[0] === "This value should not be blank.", "Email error message is not valid");
+        client.assert(response.body.errors.username[0] === "This value should not be blank.", "Username error message is not valid");
+        client.assert(response.body.errors.password[0] === "This value should not be blank.", "Password error message is not valid");
+    })
+%}
+
+### Registration user with invalid email
+POST http://localhost:80/api/registration
+Content-Type: application/json
+
+{
+    "email": "email",
+    "username": "{{$random.alphanumeric(50)}}",
+    "password": "{{$random.alphanumeric(50)}}"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+        client.assert(response.body.message === "User not valid", "Message is not valid");
+        client.assert(response.body.errors.email[0] === "This value is not a valid email address.", "Email error message is not valid");
+    })
+%}
