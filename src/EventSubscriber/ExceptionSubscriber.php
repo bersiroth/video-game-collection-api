@@ -38,7 +38,7 @@ class ExceptionSubscriber implements EventSubscriberInterface
                 'errors' => $throwable->getErrors(),
             ];
             $statusCode = Response::HTTP_BAD_REQUEST;
-        } else if ($throwable instanceof BadRequestHttpException) {
+        } elseif ($throwable instanceof BadRequestHttpException) {
             $body = [
                 'message' => $throwable->getMessage(),
             ];
