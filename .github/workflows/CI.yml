@@ -17,7 +17,10 @@ jobs:
       - name: Create schema
         run: |
           docker compose exec -T php-ci bin/console doctrine:schema:update --env=test --force
-      - name: linter
+      - name: Fixture
+        run: |
+          docker compose exec -T php-ci bin/console hautelook:fixtures:load  -n --env test
+      - name: Linter
         run: |
           docker compose exec -T --env PHP_CS_FIXER_IGNORE_ENV=1 php-ci vendor/bin/php-cs-fixer fix --dry-run
       - name: Run tests
