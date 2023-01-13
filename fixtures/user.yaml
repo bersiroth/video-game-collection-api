@@ -1,0 +1,13 @@
+App\Entity\User:
+    user_template (template):
+        password: '\$2y\$13\$cObSnxzQz/UgzfTJETfJzOpCFf7c/WIB5bwN2MFaxEkTzWmPNc0P.' # password
+    user (extends user_template):
+        id: '1dc51b42-cc9a-4a19-a195-953a42893c4a'
+        roles: '[ROLE_USER]'
+        email (unique): 'user@email.fr'
+        username (unique): '<fr_FR:username()>'
+    user_admin (extends user_template):
+        id: 'fa37f292-8827-4a3c-a11a-294fc58cf72f'
+        roles: '[ROLE_ADMIN]'
+        email (unique): 'admin@email.fr'
+        username (unique): '<fr_FR:username()>'

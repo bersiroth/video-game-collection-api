@@ -4,26 +4,33 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUserInterface;
+use Ramsey\Uuid\Doctrine\UuidGenerator;
+use Ramsey\Uuid\UuidInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[UniqueEntity('email')]
 #[UniqueEntity('username')]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, JWTUserInterface
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'uuid', unique: true)]
+    #[ORM\GeneratedValue('CUSTOM')]
+    #[ORM\CustomIdGenerator(UuidGenerator::class)]
+    #[Groups(['user:read'])]
+    private UuidInterface|string|null $id = null;
 
     #[ORM\Column(unique: true)]
     #[Assert\NotBlank]
     #[Assert\Email]
     #[Assert\Length(min: 5, max: 255)]
+    #[Groups(['user:read'])]
     private string $email;
 
     #[ORM\Column]
@@ -37,9 +44,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(unique: true)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 2, max: 255)]
+    #[Groups(['user:read'])]
     private string $username;
 
-    public function getId(): ?int
+    public function getId(): UuidInterface|string|null
     {
         return $this->id;
     }
@@ -112,5 +120,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUsername(): string
     {
         return $this->username;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    public function setId(UuidInterface|string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public static function createFromPayload($username, array $payload): self
+    {
+        return (new self())
+            ->setId($username)
+            ->setUsername($payload['username'])
+            ->setEmail($payload['email'])
+            ->setRoles($payload['roles']);
     }
 }

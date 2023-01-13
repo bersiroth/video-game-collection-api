@@ -23,7 +23,7 @@ class RegistrationControllerTest extends KernelTestCase
             '/api/registration',
             Request::METHOD_POST,
             server: [
-                'Content-Type' => 'application/json',
+                'CONTENT_TYPE' => 'application/json',
             ],
             content: <<<JSON
 {
@@ -56,7 +56,7 @@ JSON
             '/api/registration',
             Request::METHOD_POST,
             server: [
-                'Content-Type' => 'application/json',
+                'CONTENT_TYPE' => 'application/json',
             ],
             content: <<<JSON
 {
@@ -102,7 +102,7 @@ JSON,
             '/api/registration',
             Request::METHOD_POST,
             server: [
-                'Content-Type' => 'application/json',
+                'CONTENT_TYPE' => 'application/json',
             ],
             content: <<<JSON
 {

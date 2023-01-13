@@ -25,3 +25,7 @@
 ###< phpunit/phpunit ###
 
 .idea/
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/private.pem
+/config/jwt/public.pem
+###< lexik/jwt-authentication-bundle ###

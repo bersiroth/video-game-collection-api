@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Subscriber;
+namespace App\EventSubscriber;
 
 use App\Exception\InvalidEntityException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 class ExceptionSubscriber implements EventSubscriberInterface
@@ -37,9 +38,15 @@ class ExceptionSubscriber implements EventSubscriberInterface
                 'errors' => $throwable->getErrors(),
             ];
             $statusCode = Response::HTTP_BAD_REQUEST;
+        } else if ($throwable instanceof BadRequestHttpException) {
+            $body = [
+                'message' => $throwable->getMessage(),
+            ];
+            $statusCode = Response::HTTP_BAD_REQUEST;
         } else {
             $body = [
                 'message' => 'internal server error',
+                'exception' => $throwable::class,
                 'error' => $throwable->getMessage().' '.$throwable->getFile().' '.$throwable->getLine(),
                 'trace' => $throwable->getTrace()[0],
             ];

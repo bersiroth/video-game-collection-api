@@ -4,3 +4,7 @@ controllers:
         namespace: App\Controller
     type: annotation
     prefix: /api
+
+api_login:
+    path: /api/login
+    methods: [POST]

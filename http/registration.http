@@ -12,6 +12,10 @@ Content-Type: application/json
     client.test("Request executed successfully", function() {
         client.assert(response.status === 201, "Response status is not 201");
     });
+    const parsed_body = JSON.parse(request.body());
+    client.global.set("email", parsed_body.email);
+    client.global.set("password", parsed_body.password);
+
 %}
 
 ### Registration user with empty body
