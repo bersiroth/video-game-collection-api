@@ -1,0 +1,163 @@
+App\Entity\VideoGame:
+    the_last_of_us_1:
+        id: 1
+        name: 'The last of us'
+        releaseDate: '<date_create("2014-07-26")>'
+        genre:
+            - '@action'
+            - '@survival-horror'
+        publisher:
+            - '@sony_pub'
+        developer:
+            - '@naughty_dog'
+        franchise:
+            - '@the_last_of_us'
+        platform:
+            - '@playstation_4'
+        description: "Le survival action The Last of Us sur PS3 suit Joel et d'Ellie à travers les Etats-Unis. Les deux devront s'entraider pour survivre à une mystérieuse peste. La nature commence à s'approprier les villes abandonnées et les quelques survivants s'entretuent pour récupérer le peu de nourriture et d'armes encore présentes."
+    final_fantasy_xv:
+        id: 2
+        name: 'Final Fantasy XV'
+        releaseDate: '<date_create("2016-11-29")>'
+        genre:
+            - '@role-playing-game'
+        publisher:
+            - '@square_enix_pub'
+        developer:
+            - '@square_enix'
+        franchise:
+            - '@final_fantasy'
+        platform:
+            - '@playstation_4'
+        description: "Final Fantasy XV est un RPG sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Noctis, un prince qui doit sauver son royaume. Il pourra compter sur ses amis pour l'aider dans sa quête."
+    resident_evil_7:
+        id: 3
+        name: 'Resident Evil 7'
+        releaseDate: '<date_create("2017-01-24")>'
+        genre:
+            - '@survival-horror'
+        publisher:
+            - '@capcom_pub'
+        developer:
+            - '@capcom'
+        franchise:
+            - '@resident_evil'
+        platform:
+            - '@playstation_4'
+        description: "Resident Evil 7 est un survival-horror sur PS4. Le jeu se déroule dans une maison hantée et propose un système de combat en vue à la première personne. Le joueur incarne Ethan, un homme qui doit sauver sa femme. Il pourra compter sur son ami Mia pour l'aider dans sa quête."
+    gof_of_war:
+        id: 4
+        name: 'God of War'
+        releaseDate: '<date_create("2018-04-20")>'
+        genre:
+            - '@action'
+            - '@adventure'
+        publisher:
+            - '@sony_pub'
+        developer:
+            - '@santa_monica_studio'
+        franchise:
+            - '@god_of_war'
+        platform:
+            - '@playstation_4'
+        description: "God of War est un action-adventure sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Kratos, un dieu qui doit sauver son fils. Il pourra compter sur son ami Atreus pour l'aider dans sa quête."
+    gta_v:
+        id: 5
+        name: 'Grand Theft Auto V'
+        releaseDate: '<date_create("2013-09-17")>'
+        genre:
+            - '@action'
+            - '@adventure'
+        publisher:
+            - '@rockstar_games_pub'
+        developer:
+            - '@rockstar_games'
+        franchise:
+            - '@grand_theft_auto'
+        platform:
+            - '@playstation_3'
+            - '@playstation_4'
+            - '@xbox_360'
+            - '@xbox_one'
+            - '@nintendo_switch'
+        description: "Grand Theft Auto V est un action-adventure sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Trevor, un homme qui doit sauver son fils. Il pourra compter sur son ami Franklin pour l'aider dans sa quête."
+    call_of_duty_modern_warfare:
+        id: 6
+        name: 'Call of Duty: Modern Warfare'
+        releaseDate: '<date_create("2019-10-25")>'
+        genre:
+            - '@first-person-shooter'
+        publisher:
+            - '@activision_pub'
+        developer:
+            - '@infinity_ward'
+        franchise:
+            - '@call_of_duty'
+        platform:
+            - '@playstation_4'
+            - '@xbox_one'
+        description: "Call of Duty: Modern Warfare est un FPS sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
+    need_for_speed:
+        id: 7
+        name: 'Need for Speed'
+        releaseDate: '<date_create("2015-11-03")>'
+        genre:
+            - '@racing'
+        publisher:
+            - '@electronic_arts_pub'
+        developer:
+            - '@ghost_games'
+        franchise:
+            - '@need_for_speed'
+        platform:
+            - '@playstation_4'
+            - '@xbox_one'
+        description: "Need for Speed est un jeu de course sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
+    fifa_20:
+        id: 8
+        name: 'FIFA 20'
+        releaseDate: '<date_create("2019-09-27")>'
+        genre:
+            - '@sports'
+        publisher:
+            - '@electronic_arts_pub'
+        developer:
+            - '@electronic_arts'
+        franchise:
+            - '@fifa'
+        platform:
+            - '@playstation_4'
+            - '@xbox_one'
+        description: "FIFA 20 est un jeu de sport sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
+    street_fighter_v:
+        id: 9
+        name: 'Street Fighter V'
+        releaseDate: '<date_create("2016-02-16")>'
+        genre:
+            - '@fighting'
+        publisher:
+            - '@capcom_pub'
+        developer:
+            - '@capcom'
+        franchise:
+            - '@street_fighter'
+        platform:
+            - '@playstation_4'
+            - '@xbox_one'
+    nioh_1:
+        id: 10
+        name: 'Nioh'
+        releaseDate: '<date_create("2017-02-07")>'
+        genre:
+            - '@action'
+            - '@role-playing-game'
+        publisher:
+            - '@koei_tecmo_pub'
+        developer:
+            - '@team_ninja'
+        franchise:
+            - '@nioh'
+        platform:
+            - '@playstation_4'
+        description: "Nioh est un action-RPG sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
+

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional\Controller;
 
+use App\Tests\Functional\AuthorizationTrait;
 use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ProfileControllerTest extends KernelTestCase
 {
     use RefreshDatabaseTrait;
+    use AuthorizationTrait;
 
     public function testGetProfile(): void
     {
@@ -23,7 +25,7 @@ class ProfileControllerTest extends KernelTestCase
             Request::METHOD_GET,
             server: [
                 'CONTENT_TYPE' => 'application/json',
-                'HTTP_Authorization' => 'Bearer '.$this->getAuthorizationToken(),
+                'HTTP_Authorization' => 'Bearer '.$this->getAuthorizationToken(self::$kernel),
             ]
         );
 
@@ -81,27 +83,5 @@ class ProfileControllerTest extends KernelTestCase
         self::assertSame(Response::HTTP_UNAUTHORIZED, $response->getStatusCode(), $response->getContent());
         $content = json_decode($response->getContent(), true);
         self::assertEquals('Invalid JWT Token', $content['message']);
-    }
-
-    private function getAuthorizationToken(): string
-    {
-        $request = Request::create(
-            '/api/login',
-            Request::METHOD_POST,
-            server: [
-                'CONTENT_TYPE' => 'application/json',
-            ],
-            content: <<<JSON
-{
-    "username": "user@email.fr",
-    "password": "password"
-}
-JSON
-        );
-        $response = self::$kernel->handle($request);
-        self::assertSame(Response::HTTP_OK, $response->getStatusCode(), $response->getContent());
-        $data = json_decode($response->getContent(), true);
-
-        return $data['token'];
     }
 }

@@ -1,0 +1,31 @@
+App\Entity\Genre:
+    action:
+        id: 1
+        name: 'Action'
+    survival-horror:
+        id: 2
+        name: 'Survival-Horror'
+    adventure:
+        id: 3
+        name: 'Adventure'
+    role-playing-game:
+        id: 4
+        name: 'RPG'
+    first-person-shooter:
+        id: 5
+        name: 'FPS'
+    third-person-shooter:
+        id: 6
+        name: 'TPS'
+    racing:
+        id: 7
+        name: 'Racing'
+    sports:
+        id: 8
+        name: 'Sports'
+    fighting:
+        id: 9
+        name: 'Fighting'
+    strategy:
+        id: 10
+        name: 'Strategy'
