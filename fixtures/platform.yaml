@@ -1,0 +1,45 @@
+App\Entity\Platform:
+    playstation_4:
+        id: 1
+        name: 'Playstation 4'
+        release_date: '<date_create("2013-11-29")>'
+    playstation_5:
+        id: 2
+        name: 'Playstation 5'
+        release_date: '<date_create("2020-11-19")>'
+    xbox_360:
+        id: 3
+        name: 'Xbox 360'
+        release_date: '<date_create("2005-11-22")>'
+    xbox_one:
+        id: 4
+        name: 'Xbox One'
+        release_date: '<date_create("2013-11-22")>'
+    xbox_series_x:
+        id: 5
+        name: 'Xbox Series X'
+        release_date: '<date_create("2020-11-10")>'
+    nintendo_switch:
+        id: 6
+        name: 'Nintendo Switch'
+        release_date: '<date_create("2017-03-03")>'
+    nintendo_64:
+        id: 7
+        name: 'Nintendo 64'
+        release_date: '<date_create("1996-06-23")>'
+    nintendo_gamecube:
+        id: 8
+        name: 'Nintendo Gamecube'
+        release_date: '<date_create("2001-09-14")>'
+    nintendo_3ds:
+        id: 9
+        name: 'Nintendo 3DS'
+        release_date: '<date_create("2011-02-26")>'
+    playstation_3:
+        id: 10
+        name: 'Playstation 3'
+        release_date: '<date_create("2006-11-11")>'
+    playstation_portable:
+        id: 11
+        name: 'Playstation Portable'
+        release_date: '<date_create("2004-12-12")>'

@@ -1,0 +1,22 @@
+App\Entity\Publisher:
+    sony_pub:
+        id: 1
+        name: 'Sony Computer Entertainment'
+    square_enix_pub:
+        id: 2
+        name: 'Square Enix'
+    capcom_pub:
+        id: 3
+        name: 'Capcom'
+    rockstar_games_pub:
+        id: 4
+        name: 'Rockstar Games'
+    activision_pub:
+        id: 5
+        name: 'Activision'
+    electronic_arts_pub:
+        id: 6
+        name: 'Electronic Arts'
+    koei_tecmo_pub:
+        id: 7
+        name: 'Koei Tecmo'
