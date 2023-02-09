@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Repository\DeveloperRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: DeveloperRepository::class)]
+#[ORM\Entity]
 class Developer
 {
     #[ORM\Id]

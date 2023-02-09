@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Repository\GenreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: GenreRepository::class)]
+#[ORM\Entity]
 class Genre
 {
     #[ORM\Id]

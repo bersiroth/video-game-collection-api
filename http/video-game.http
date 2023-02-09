@@ -13,7 +13,7 @@ Authorization: Bearer {{auth_token}}
         client.assert(response.status === 200, "Response status is not 200");
         client.assert(response.body.page === 2);
         client.assert(response.body.limit === 3);
-        client.assert(response.body.videoGames[0].id === 4);
+        client.assert(response.body.videoGames[0].id === "ca6a89e7-da9b-4e9e-983e-9378c2ffab5f");
         client.assert(response.body.videoGames[0].name === "God of War");
         client.assert(response.body.videoGames[0].genre[0] === "Action");
         client.assert(response.body.videoGames[0].genre[1] === "Adventure");
@@ -30,7 +30,7 @@ Authorization: Bearer {{auth_token}}
         client.assert(response.status === 200, "Response status is not 200");
         client.assert(response.body.page === 1);
         client.assert(response.body.limit === 5);
-        client.assert(response.body.videoGames[0].id === 1);
+        client.assert(response.body.videoGames[0].id === "879ee265-cf08-4af5-b40f-026593ab6cc0");
         client.assert(response.body.videoGames[0].name === "The last of us");
         client.assert(response.body.videoGames[0].genre[0] === "Action");
         client.assert(response.body.videoGames[0].genre[1] === "Survival-Horror");

@@ -9,6 +9,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\Serializer\Annotation\Ignore;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 
 #[ORM\Entity(repositoryClass: VideoGameRepository::class)]
 class VideoGame
@@ -16,7 +19,12 @@ class VideoGame
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Ignore]
     private ?int $id = null;
+
+    #[ORM\Column(type: 'uuid', unique: true)]
+    #[SerializedName('id')]
+    private UuidInterface|string|null $uuid = null;
 
     #[ORM\Column(length: 255, nullable: false)]
     private ?string $name = null;
@@ -56,16 +64,14 @@ class VideoGame
         return $this->id;
     }
 
+    public function getUuid(): UuidInterface|string|null
+    {
+        return $this->uuid;
+    }
+
     public function getName(): ?string
     {
         return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
     }
 
     /**
@@ -119,18 +125,6 @@ class VideoGame
     public function getReleaseDate(): ?\DateTimeInterface
     {
         return $this->releaseDate;
-    }
-
-    public function setReleaseDate(?\DateTimeInterface $releaseDate): self
-    {
-        $this->releaseDate = $releaseDate;
-
-        return $this;
-    }
-
-    public function setId(?int $id): void
-    {
-        $this->id = $id;
     }
 
     /**
@@ -210,7 +204,35 @@ class VideoGame
         return $this->description;
     }
 
-    public function setDescription(?string $description): self
+    public function setId(?int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function setUuid(UuidInterface|string|null $uuid): self
+    {
+        $this->uuid = $uuid;
+
+        return $this;
+    }
+
+    public function setName(?string $name): VideoGame
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function setReleaseDate(?\DateTimeInterface $releaseDate): VideoGame
+    {
+        $this->releaseDate = $releaseDate;
+
+        return $this;
+    }
+
+    public function setDescription(?string $description): VideoGame
     {
         $this->description = $description;
 
