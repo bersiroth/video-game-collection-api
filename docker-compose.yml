@@ -22,6 +22,7 @@ services:
     build:
       dockerfile: ./docker/php/dockerfile
       target: php-dev
+      context: .
     volumes:
       - .:/var/www/video-game
     ports:
@@ -34,6 +35,7 @@ services:
     build:
       dockerfile: ./docker/php/dockerfile
       target: php-ci
+      context: .
     depends_on:
       postgres:
         condition: service_healthy

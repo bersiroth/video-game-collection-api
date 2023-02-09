@@ -1,31 +1,21 @@
 App\Entity\Developer:
     naughty_dog:
-        id: 1
         name: 'Naughty Dog'
     square_enix:
-        id: 2
         name: 'Square Enix'
     capcom:
-        id: 3
         name: 'Capcom'
     ubisoft:
-        id: 4
         name: 'Ubisoft'
     rockstar_games:
-        id: 5
         name: 'Rockstar Games'
     infinity_ward:
-        id: 6
         name: 'Infinity Ward'
     ghost_games:
-        id: 7
         name: 'Ghost Games'
     electronic_arts:
-        id: 8
         name: 'Electronic Arts'
     team_ninja:
-        id: 9
         name: 'Team Ninja'
     santa_monica_studio:
-        id: 10
         name: 'Santa Monica Studio'

@@ -1,31 +1,21 @@
 App\Entity\Franchise:
     the_last_of_us:
-        id: 1
         name: 'The Last of Us'
     final_fantasy:
-        id: 2
         name: 'Final Fantasy'
     resident_evil:
-        id: 3
         name: 'Resident Evil'
     god_of_war:
-        id: 4
         name: 'God of War'
     grand_theft_auto:
-        id: 5
         name: 'Grand Theft Auto'
     call_of_duty:
-        id: 6
         name: 'Call of Duty'
     need_for_speed:
-        id: 7
         name: 'Need for Speed'
     fifa:
-        id: 8
         name: 'FIFA'
     street_fighter:
-        id: 9
         name: 'Street Fighter'
     nioh:
-        id: 10
         name: 'Nioh'

@@ -2,3 +2,12 @@
 GET http://localhost:80/api/profile
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+        client.assert(typeof response.body.id ===  "string");
+        client.assert(typeof response.body.email ===  "string");
+        client.assert(typeof response.body.username ===  "string");
+    })
+%}

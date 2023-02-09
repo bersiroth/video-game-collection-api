@@ -6,6 +6,7 @@ namespace App\Factory;
 
 use App\Entity\User;
 use App\Exception\InvalidEntityException;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -24,6 +25,7 @@ class UserFactory
     {
         $user = new User();
 
+        $user->setUuid(Uuid::uuid4());
         $user->setEmail($email);
         $user->setUsername($username);
         $hashedPassword = '' !== $plainPassword ? $this->passwordHasher->hashPassword($user, $plainPassword) : '';

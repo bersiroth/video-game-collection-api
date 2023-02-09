@@ -1,6 +1,6 @@
 App\Entity\VideoGame:
     the_last_of_us_1:
-        id: 1
+        uuid: '879ee265-cf08-4af5-b40f-026593ab6cc0'
         name: 'The last of us'
         releaseDate: '<date_create("2014-07-26")>'
         genre:
@@ -16,7 +16,7 @@ App\Entity\VideoGame:
             - '@playstation_4'
         description: "Le survival action The Last of Us sur PS3 suit Joel et d'Ellie à travers les Etats-Unis. Les deux devront s'entraider pour survivre à une mystérieuse peste. La nature commence à s'approprier les villes abandonnées et les quelques survivants s'entretuent pour récupérer le peu de nourriture et d'armes encore présentes."
     final_fantasy_xv:
-        id: 2
+        uuid: '0d575b38-bbd7-4cbe-bc03-93a954d20da5'
         name: 'Final Fantasy XV'
         releaseDate: '<date_create("2016-11-29")>'
         genre:
@@ -31,7 +31,7 @@ App\Entity\VideoGame:
             - '@playstation_4'
         description: "Final Fantasy XV est un RPG sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Noctis, un prince qui doit sauver son royaume. Il pourra compter sur ses amis pour l'aider dans sa quête."
     resident_evil_7:
-        id: 3
+        uuid: 'b380c573-0819-433a-958c-40b8747d415a'
         name: 'Resident Evil 7'
         releaseDate: '<date_create("2017-01-24")>'
         genre:
@@ -46,7 +46,7 @@ App\Entity\VideoGame:
             - '@playstation_4'
         description: "Resident Evil 7 est un survival-horror sur PS4. Le jeu se déroule dans une maison hantée et propose un système de combat en vue à la première personne. Le joueur incarne Ethan, un homme qui doit sauver sa femme. Il pourra compter sur son ami Mia pour l'aider dans sa quête."
     gof_of_war:
-        id: 4
+        uuid: 'ca6a89e7-da9b-4e9e-983e-9378c2ffab5f'
         name: 'God of War'
         releaseDate: '<date_create("2018-04-20")>'
         genre:
@@ -62,7 +62,7 @@ App\Entity\VideoGame:
             - '@playstation_4'
         description: "God of War est un action-adventure sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Kratos, un dieu qui doit sauver son fils. Il pourra compter sur son ami Atreus pour l'aider dans sa quête."
     gta_v:
-        id: 5
+        uuid: '45d056b9-70e4-4a01-a7fe-44d35e74e386'
         name: 'Grand Theft Auto V'
         releaseDate: '<date_create("2013-09-17")>'
         genre:
@@ -82,7 +82,7 @@ App\Entity\VideoGame:
             - '@nintendo_switch'
         description: "Grand Theft Auto V est un action-adventure sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Trevor, un homme qui doit sauver son fils. Il pourra compter sur son ami Franklin pour l'aider dans sa quête."
     call_of_duty_modern_warfare:
-        id: 6
+        uuid: 'b7ddc3ee-bd33-4e1f-a789-12a387cfe41e'
         name: 'Call of Duty: Modern Warfare'
         releaseDate: '<date_create("2019-10-25")>'
         genre:
@@ -98,7 +98,7 @@ App\Entity\VideoGame:
             - '@xbox_one'
         description: "Call of Duty: Modern Warfare est un FPS sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
     need_for_speed:
-        id: 7
+        uuid: '693ead84-65b2-406c-8f9d-21f3a94a14b3'
         name: 'Need for Speed'
         releaseDate: '<date_create("2015-11-03")>'
         genre:
@@ -114,7 +114,7 @@ App\Entity\VideoGame:
             - '@xbox_one'
         description: "Need for Speed est un jeu de course sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
     fifa_20:
-        id: 8
+        uuid: 'd0e03d38-036f-4e25-b87c-cc9613712b48'
         name: 'FIFA 20'
         releaseDate: '<date_create("2019-09-27")>'
         genre:
@@ -130,7 +130,7 @@ App\Entity\VideoGame:
             - '@xbox_one'
         description: "FIFA 20 est un jeu de sport sur PS4. Le jeu se déroule dans un monde ouvert et propose un système de combat en temps réel. Le joueur incarne Alex, un homme qui doit sauver son fils. Il pourra compter sur son ami Frank pour l'aider dans sa quête."
     street_fighter_v:
-        id: 9
+        uuid: '7e1096f7-90cd-43ec-95b2-9de3319cbce5'
         name: 'Street Fighter V'
         releaseDate: '<date_create("2016-02-16")>'
         genre:
@@ -145,7 +145,7 @@ App\Entity\VideoGame:
             - '@playstation_4'
             - '@xbox_one'
     nioh_1:
-        id: 10
+        uuid: 'e5c1d9fd-06ca-42d9-b0de-61de47530850'
         name: 'Nioh'
         releaseDate: '<date_create("2017-02-07")>'
         genre:

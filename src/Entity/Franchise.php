@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Repository\FranchiseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: FranchiseRepository::class)]
+#[ORM\Entity]
 class Franchise
 {
     #[ORM\Id]
